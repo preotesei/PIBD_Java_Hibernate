@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="JavaBean.Client" table="clienti" optimistic-lock="version">
+        <id name="idclient" type="java.lang.Long">
+            <column name="idclient" sql-type="BIGINT" not-null="true"/>
+            <generator class="identity"/>
+        </id>
+        <property name="cnp" type="java.lang.String">
+            <column name="cnp" sql-type="VARCHAR" length="13" not-null="true" unique="true"/>
+        </property>
+        <property name="Nume" type="java.lang.String">
+            <column name="Nume" sql-type="VARCHAR" length="50" not-null="true"/>
+        </property>
+        <property name="Prenume" type="java.lang.String">
+            <column name="Prenume" sql-type="VARCHAR" length="50" not-null="true"/>
+        </property>
+        <property name="Telefon" type="java.lang.String">
+            <column name="Telefon" sql-type="VARCHAR" length="13" not-null="true" unique="true"/>
+        </property>
+        <property name="Email" type="java.lang.String">
+            <column name="Email" sql-type="VARCHAR" length="50" not-null="true" unique="true"/>
+        </property>
+        <property name="Oras" type="java.lang.String">
+            <column name="Oras" sql-type="VARCHAR" length="50" not-null="true"/>
+        </property>
+        <property name="Adresa" type="java.lang.String">
+            <column name="Adresa" sql-type="VARCHAR" not-null="true"/>
+        </property>
+        <property name="Cod_Postal" type="java.lang.String">
+            <column name="Cod_Postal" sql-type="VARCHAR" not-null="true"/>
+        </property>
+        <set name="comenzi" table="comenzi" inverse="true" lazy="true" fetch="select">
+            <key column="idclient"/>
+            <one-to-many class="JavaBean.Comanda"/>
+        </set>
+    </class>
+</hibernate-mapping>

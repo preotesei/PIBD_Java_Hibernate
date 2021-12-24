@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pibd_project</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.username">PIBD</property>
+        <property name="hibernate.connection.password">PIBD_PROJECT_2021</property>
+        <mapping resource="Client.hbm.xml"/>
+        <mapping resource="Comanda.hbm.xml"/>
+        <mapping resource="Magazin.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

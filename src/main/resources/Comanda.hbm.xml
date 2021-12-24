@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="JavaBean.Comanda" table="comenzi" optimistic-lock="version">
+        <id name="idcomanda" type="java.lang.Long">
+            <column name="idcomanda" sql-type="BIGINT" not-null="true"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one name="idclient" class="JavaBean.Client" fetch="select">
+            <column name="idclient" sql-type="BIGINT" not-null="true"/>
+        </many-to-one>
+        <many-to-one name="idmagazin" class="JavaBean.Magazin" fetch="select">
+            <column name="idmagazin" sql-type="BIGINT" not-null="true"/>
+        </many-to-one>
+        <property name="status_comanda" type="java.lang.String">
+            <column name="status_comanda" sql-type="VARCHAR" length="20" not-null="true"/>
+        </property>
+        <property name="data_plasarii" type="java.time.LocalDate">
+            <column name="data_plasarii" sql-type="DATE" length="50" not-null="true"/>
+        </property>
+        <property name="ora_plasarii" type="java.time.LocalTime">
+            <column name="ora_plasarii" sql-type="TIME" length="10" not-null="true"/>
+        </property>
+        <property name="data_livrarii" type="java.time.LocalDate">
+            <column name="data_livrarii" sql-type="DATE" length="50" not-null="true"/>
+        </property>
+        <property name="ora_livrarii" type="java.time.LocalTime">
+            <column name="ora_livrarii" sql-type="TIME" length="10" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

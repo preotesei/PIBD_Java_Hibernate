@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="JavaBean.Magazin" table="magazine" optimistic-lock="version">
+        <id name="idmagazin" type="java.lang.Long">
+            <column name="idmagazin" sql-type="BIGINT" not-null="true"/>
+            <generator class="identity"/>
+        </id>
+        <property name="nume_magazin" type="java.lang.String">
+            <column name="nume_magazin" sql-type="VARCHAR" length="13" not-null="true" unique="true"/>
+        </property>
+        <property name="Telefon" type="java.lang.String">
+            <column name="Telefon" sql-type="VARCHAR" length="50" not-null="true"/>
+        </property>
+        <property name="Email" type="java.lang.String">
+            <column name="Email" sql-type="VARCHAR" length="50" not-null="true"/>
+        </property>
+        <property name="Oras" type="java.lang.String">
+            <column name="Oras" sql-type="VARCHAR" length="13" not-null="true" unique="true"/>
+        </property>
+        <property name="Adresa" type="java.lang.String">
+            <column name="Adresa" sql-type="VARCHAR" length="50" not-null="true" unique="true"/>
+        </property>
+        <property name="Cod_Postal" type="java.lang.String">
+            <column name="Cod_Postal" sql-type="VARCHAR" length="50" not-null="true"/>
+        </property>
+        <set name="comenzi" table="comenzi" inverse="true" lazy="true" fetch="select">
+            <key column="idmagazin"/>
+            <one-to-many class="JavaBean.Comanda"/>
+        </set>
+    </class>
+</hibernate-mapping>
