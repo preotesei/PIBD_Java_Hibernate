@@ -14,7 +14,7 @@
             <column name="Nume" sql-type="VARCHAR" length="50" not-null="true"/>
         </property>
         <property name="Prenume" type="java.lang.String">
-            <column name="Prenume" sql-type="VARCHAR" length="50" not-null="true"/>
+            <column name="prenume" sql-type="VARCHAR" length="50" not-null="true"/>
         </property>
         <property name="Telefon" type="java.lang.String">
             <column name="Telefon" sql-type="VARCHAR" length="13" not-null="true" unique="true"/>

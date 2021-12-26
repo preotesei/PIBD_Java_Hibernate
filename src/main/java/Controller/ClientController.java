@@ -19,6 +19,17 @@ public class ClientController extends HttpServlet {
 
     @Override
     protected void doGet(@NotNull HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        if(request.getParameter("displayClienti") != null){
+            List<Client> clientList = clientDAO.displayClienti();
+            request.setAttribute("clientList", clientList);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("displayClienti.jsp");
+            dispatcher.forward(request, response);
+        }
+    }
+
+    @Override
+    protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(request.getParameter("addClient") != null){
             client.setCnp(request.getParameter("cnp"));
             client.setNume(request.getParameter("Nume"));
@@ -33,21 +44,11 @@ public class ClientController extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher("addClient.jsp");
             dispatcher.forward(request, response);
         }
-    }
-
-    @Override
-    protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request.getParameter("displayClienti") != null){
-            List<Client> clientList = clientDAO.displayClienti();
-            request.setAttribute("clientList", clientList);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("displayClienti.jsp");
-            dispatcher.forward(request, response);
-        }
         if(request.getParameter("deleteClient") != null){
             Long idclient = Long.parseLong(request.getParameter("idclient"));
             client.setIdclient(idclient);
             clientDAO.deleteClient(client);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("deleteJudecator.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("deleteClient.jsp");
             dispatcher.forward(request, response);
         }
         if(request.getParameter("updateClient") != null){
