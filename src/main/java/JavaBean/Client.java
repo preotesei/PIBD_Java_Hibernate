@@ -1,127 +1,129 @@
 package JavaBean;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Client implements Serializable {
 
-    private Long idclient;
-    private String cnp;
-    private String Nume;
-    private String Prenume;
-    private String Telefon;
-    private String Email;
-    private String Oras;
-    private String Adresa;
-    private String Cod_Postal;
-    private Set<Comanda> comenzi = new HashSet<>();
+    private Long IDCLIENT;
+    private String CNP;
+    private String NUME;
+    private String PRENUME;
+    private String TELEFON;
+    private String EMAIL;
+    private String ORAS;
+    private String ADRESA;
+    private String CODPOSTAL;
+    private Set<Comanda> COMENZI = new HashSet<>();
 
     public Client() {}
 
-    public Client(Long idclient, String cnp, String nume, String prenume, String telefon, String email, String oras, String adresa, String cod_Postal, Set<Comanda> comenzi) {
-        this.idclient = idclient;
-        this.cnp = cnp;
-        Nume = nume;
-        Prenume = prenume;
-        Telefon = telefon;
-        Email = email;
-        Oras = oras;
-        Adresa = adresa;
-        Cod_Postal = cod_Postal;
-        this.comenzi = new HashSet<>(comenzi);
+    public Client(Long IDCLIENT, String CNP, String NUME, String PRENUME, String TELEFON, String EMAIL, String ORAS, String ADRESA, String CODPOSTAL, Set<Comanda> COMENZI) {
+        this.IDCLIENT = IDCLIENT;
+        this.CNP = CNP;
+        this.NUME = NUME;
+        this.PRENUME = PRENUME;
+        this.TELEFON = TELEFON;
+        this.EMAIL = EMAIL;
+        this.ORAS = ORAS;
+        this.ADRESA = ADRESA;
+        this.CODPOSTAL = CODPOSTAL;
+        this.COMENZI = new HashSet<>(COMENZI);
     }
 
-    public Client(Client client){
-        this.idclient = client.getIdclient();
-        this.cnp = client.getCnp();
-        this.Nume = client.getNume();
-        this.Prenume = client.getPrenume();
-        this.Telefon = client.getTelefon();
-        this.Email = client.getEmail();
-        this.Oras = client.getOras();
-        this.Adresa = client.getAdresa();
-        this.Cod_Postal = client.getCod_Postal();
-        this.comenzi = new HashSet<>(client.getComenzi());
+    public Client(@NotNull Client client){
+        this.IDCLIENT = client.getIDCLIENT();
+        this.CNP = client.getCNP();
+        this.NUME = client.getNUME();
+        this.PRENUME = client.getPRENUME();
+        this.TELEFON = client.getTELEFON();
+        this.EMAIL = client.getEMAIL();
+        this.ORAS = client.getORAS();
+        this.ADRESA = client.getADRESA();
+        this.CODPOSTAL = client.getCODPOSTAL();
+        this.COMENZI = new HashSet<>(client.getCOMENZI());
     }
 
-    public Long getIdclient() {
-        return idclient;
+    public Long getIDCLIENT() {
+        return IDCLIENT;
     }
 
-    public void setIdclient(Long idclient) {
-        this.idclient = idclient;
+    public void setIDCLIENT(Long IDCLIENT) {
+        this.IDCLIENT = IDCLIENT;
     }
 
-    public String getCnp() {
-        return cnp;
+    public String getCNP() {
+        return CNP;
     }
 
-    public void setCnp(String cnp) {
-        this.cnp = cnp;
+    public void setCNP(String CNP) {
+        this.CNP = CNP;
     }
 
-    public String getNume() {
-        return Nume;
+    public String getNUME() {
+        return NUME;
     }
 
-    public void setNume(String nume) {
-        Nume = nume;
+    public void setNUME(String NUME) {
+        this.NUME = NUME;
     }
 
-    public String getPrenume() {
-        return Prenume;
+    public String getPRENUME() {
+        return PRENUME;
     }
 
-    public void setPrenume(String prenume) {
-        Prenume = prenume;
+    public void setPRENUME(String PRENUME) {
+        this.PRENUME = PRENUME;
     }
 
-    public String getTelefon() {
-        return Telefon;
+    public String getTELEFON() {
+        return TELEFON;
     }
 
-    public void setTelefon(String telefon) {
-        Telefon = telefon;
+    public void setTELEFON(String TELEFON) {
+        this.TELEFON = TELEFON;
     }
 
-    public String getEmail() {
-        return Email;
+    public String getEMAIL() {
+        return EMAIL;
     }
 
-    public void setEmail(String email) {
-        Email = email;
+    public void setEMAIL(String EMAIL) {
+        this.EMAIL = EMAIL;
     }
 
-    public String getOras() {
-        return Oras;
+    public String getORAS() {
+        return ORAS;
     }
 
-    public void setOras(String oras) {
-        Oras = oras;
+    public void setORAS(String ORAS) {
+        this.ORAS = ORAS;
     }
 
-    public String getAdresa() {
-        return Adresa;
+    public String getADRESA() {
+        return ADRESA;
     }
 
-    public void setAdresa(String adresa) {
-        Adresa = adresa;
+    public void setADRESA(String ADRESA) {
+        this.ADRESA = ADRESA;
     }
 
-    public String getCod_Postal() {
-        return Cod_Postal;
+    public String getCODPOSTAL() {
+        return CODPOSTAL;
     }
 
-    public void setCod_Postal(String cod_Postal) {
-        Cod_Postal = cod_Postal;
+    public void setCODPOSTAL(String CODPOSTAL) {
+        this.CODPOSTAL = CODPOSTAL;
     }
 
-    public Set<Comanda> getComenzi() {
-        return new HashSet<>(comenzi);
+    public Set<Comanda> getCOMENZI() {
+        return new HashSet<>(COMENZI);
     }
 
-    public void setComenzi(Set<Comanda> comenzi) {
-        this.comenzi = new HashSet<>(comenzi);
+    public void setCOMENZI(Set<Comanda> COMENZI) {
+        this.COMENZI = new HashSet<>(COMENZI);
     }
 }

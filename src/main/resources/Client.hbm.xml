@@ -3,36 +3,36 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="JavaBean.Client" table="clienti" optimistic-lock="version">
-        <id name="idclient" type="java.lang.Long">
-            <column name="idclient" sql-type="BIGINT" not-null="true"/>
+        <id name="IDCLIENT" type="java.lang.Long">
+            <column name="IDCLIENT" sql-type="BIGINT" not-null="true"/>
             <generator class="identity"/>
         </id>
-        <property name="cnp" type="java.lang.String">
-            <column name="cnp" sql-type="VARCHAR" length="13" not-null="true" unique="true"/>
+        <property name="CNP" type="java.lang.String">
+            <column name="CNP" sql-type="VARCHAR" length="13" not-null="true" unique="true"/>
         </property>
-        <property name="Nume" type="java.lang.String">
-            <column name="Nume" sql-type="VARCHAR" length="50" not-null="true"/>
+        <property name="NUME" type="java.lang.String">
+            <column name="NUME" sql-type="VARCHAR" length="50" not-null="true"/>
         </property>
-        <property name="Prenume" type="java.lang.String">
-            <column name="prenume" sql-type="VARCHAR" length="50" not-null="true"/>
+        <property name="PRENUME" type="java.lang.String">
+            <column name="PRENUME" sql-type="VARCHAR" length="50" not-null="true"/>
         </property>
-        <property name="Telefon" type="java.lang.String">
-            <column name="Telefon" sql-type="VARCHAR" length="13" not-null="true" unique="true"/>
+        <property name="TELEFON" type="java.lang.String">
+            <column name="TELEFON" sql-type="VARCHAR" length="13" not-null="true" unique="true"/>
         </property>
-        <property name="Email" type="java.lang.String">
-            <column name="Email" sql-type="VARCHAR" length="50" not-null="true" unique="true"/>
+        <property name="EMAIL" type="java.lang.String">
+            <column name="EMAIL" sql-type="VARCHAR" length="50" not-null="true" unique="true"/>
         </property>
-        <property name="Oras" type="java.lang.String">
-            <column name="Oras" sql-type="VARCHAR" length="50" not-null="true"/>
+        <property name="ORAS" type="java.lang.String">
+            <column name="ORAS" sql-type="VARCHAR" length="50" not-null="true"/>
         </property>
-        <property name="Adresa" type="java.lang.String">
-            <column name="Adresa" sql-type="VARCHAR" not-null="true"/>
+        <property name="ADRESA" type="java.lang.String">
+            <column name="ADRESA" sql-type="VARCHAR" not-null="true"/>
         </property>
-        <property name="Cod_Postal" type="java.lang.String">
-            <column name="Cod_Postal" sql-type="VARCHAR" not-null="true"/>
+        <property name="CODPOSTAL" type="java.lang.String">
+            <column name="CODPOSTAL" sql-type="VARCHAR" not-null="true"/>
         </property>
-        <set name="comenzi" table="comenzi" inverse="true" lazy="true" fetch="select">
-            <key column="idclient"/>
+        <set name="COMENZI" table="comenzi" inverse="true" lazy="true" fetch="select">
+            <key column="IDCLIENT"/>
             <one-to-many class="JavaBean.Comanda"/>
         </set>
     </class>

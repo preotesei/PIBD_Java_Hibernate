@@ -3,30 +3,30 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="JavaBean.Comanda" table="comenzi" optimistic-lock="version">
-        <id name="idcomanda" type="java.lang.Long">
-            <column name="idcomanda" sql-type="BIGINT" not-null="true"/>
+        <id name="IDCOMANDA" type="java.lang.Long">
+            <column name="IDCOMANDA" sql-type="BIGINT" not-null="true"/>
             <generator class="identity"/>
         </id>
-        <many-to-one name="client" class="JavaBean.Client" fetch="select">
-            <column name="idclient" sql-type="BIGINT" not-null="true"/>
+        <many-to-one name="CLIENT" class="JavaBean.Client" fetch="select">
+            <column name="IDCLIENT" sql-type="BIGINT" not-null="true"/>
         </many-to-one>
-        <many-to-one name="magazin" class="JavaBean.Magazin" fetch="select">
-            <column name="idmagazin" sql-type="BIGINT" not-null="true"/>
+        <many-to-one name="MAGAZIN" class="JavaBean.Magazin" fetch="select">
+            <column name="IDMAGAZIN" sql-type="BIGINT" not-null="true"/>
         </many-to-one>
-        <property name="status_comanda" type="java.lang.String">
-            <column name="status_comanda" sql-type="VARCHAR" length="20" not-null="true"/>
+        <property name="STATUS_COMANDA" type="java.lang.String">
+            <column name="STATUS_COMANDA" sql-type="VARCHAR" length="20" not-null="true"/>
         </property>
-        <property name="data_plasarii" type="java.time.LocalDate">
-            <column name="data_plasarii" sql-type="DATE" length="50" not-null="true"/>
+        <property name="DATA_PLASARII" type="java.time.LocalDate">
+            <column name="DATA_PLASARII" sql-type="DATE" length="50" not-null="true"/>
         </property>
-        <property name="ora_plasarii" type="java.time.LocalTime">
-            <column name="ora_plasarii" sql-type="TIME" length="10" not-null="true"/>
+        <property name="ORA_PLASARII" type="java.time.LocalTime">
+            <column name="ORA_PLASARII" sql-type="TIME" length="10" not-null="true"/>
         </property>
-        <property name="data_livrarii" type="java.time.LocalDate">
-            <column name="data_livrarii" sql-type="DATE" length="50" not-null="true"/>
+        <property name="DATA_LIVRARII" type="java.time.LocalDate">
+            <column name="DATA_LIVRARII" sql-type="DATE" length="50" not-null="false"/>
         </property>
-        <property name="ora_livrarii" type="java.time.LocalTime">
-            <column name="ora_livrarii" sql-type="TIME" length="10" not-null="true"/>
+        <property name="ORA_LIVRARII" type="java.time.LocalTime">
+            <column name="ORA_LIVRARII" sql-type="TIME" length="10" not-null="false"/>
         </property>
     </class>
 </hibernate-mapping>

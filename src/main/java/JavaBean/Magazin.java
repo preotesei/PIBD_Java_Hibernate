@@ -1,104 +1,106 @@
 package JavaBean;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Magazin implements Serializable {
-    private Long idmagazin;
-    private String nume_magazin;
-    private String Telefon;
-    private String Email;
-    private String Oras;
-    private String Adresa;
-    private String Cod_Postal;
-    private Set<Comanda> comenzi = new HashSet<>();
+    private Long IDMAGAZIN;
+    private String NUME_MAGAZIN;
+    private String TELEFON;
+    private String EMAIL;
+    private String ORAS;
+    private String ADRESA;
+    private String CODPOSTAL;
+    private Set<Comanda> COMENZI = new HashSet<>();
 
     public Magazin() { }
 
-    public Magazin(Long idmagazin, String nume_magazin, String telefon, String email, String oras, String adresa, String cod_Postal, Set<Comanda> comenzi) {
-        this.idmagazin = idmagazin;
-        this.nume_magazin = nume_magazin;
-        Telefon = telefon;
-        Email = email;
-        Oras = oras;
-        Adresa = adresa;
-        Cod_Postal = cod_Postal;
-        this.comenzi = new HashSet<>(comenzi);
+    public Magazin(Long IDMAGAZIN, String NUME_MAGAZIN, String TELEFON, String EMAIL, String ORAS, String ADRESA, String CODPOSTAL, Set<Comanda> COMENZI) {
+        this.IDMAGAZIN = IDMAGAZIN;
+        this.NUME_MAGAZIN = NUME_MAGAZIN;
+        this.TELEFON = TELEFON;
+        this.EMAIL = EMAIL;
+        this.ORAS = ORAS;
+        this.ADRESA = ADRESA;
+        this.CODPOSTAL = CODPOSTAL;
+        this.COMENZI = new HashSet<>(COMENZI);
     }
 
-    public Magazin(Magazin magazin){
-        this.idmagazin = magazin.getIdmagazin();
-        this.nume_magazin = magazin.getNume_magazin();
-        this.Telefon = magazin.getTelefon();
-        this.Email = magazin.getEmail();
-        this.Oras = magazin.getOras();
-        this.Adresa = magazin.getAdresa();
-        this.Cod_Postal = magazin.getCod_Postal();
-        this.comenzi = new HashSet<>(magazin.getComenzi());
+    public Magazin(@NotNull Magazin magazin){
+        this.IDMAGAZIN = magazin.getIDMAGAZIN();
+        this.NUME_MAGAZIN = magazin.getNUME_MAGAZIN();
+        this.TELEFON = magazin.getTELEFON();
+        this.EMAIL = magazin.getEMAIL();
+        this.ORAS = magazin.getORAS();
+        this.ADRESA = magazin.getADRESA();
+        this.CODPOSTAL = magazin.getCODPOSTAL();
+        this.COMENZI = new HashSet<>(magazin.getCOMENZI());
     }
 
-    public Long getIdmagazin() {
-        return idmagazin;
+    public Long getIDMAGAZIN() {
+        return IDMAGAZIN;
     }
 
-    public void setIdmagazin(Long idmagazin) {
-        this.idmagazin = idmagazin;
+    public void setIDMAGAZIN(Long idmagazin) {
+        this.IDMAGAZIN = idmagazin;
     }
 
-    public String getNume_magazin() {
-        return nume_magazin;
+    public String getNUME_MAGAZIN() {
+        return NUME_MAGAZIN;
     }
 
-    public void setNume_magazin(String nume_magazin) {
-        this.nume_magazin = nume_magazin;
+    public void setNUME_MAGAZIN(String nume_magazin) {
+        this.NUME_MAGAZIN = nume_magazin;
     }
 
-    public String getTelefon() {
-        return Telefon;
+    public String getTELEFON() {
+        return TELEFON;
     }
 
-    public void setTelefon(String telefon) {
-        Telefon = telefon;
+    public void setTELEFON(String TELEFON) {
+        this.TELEFON = TELEFON;
     }
 
-    public String getEmail() {
-        return Email;
+    public String getEMAIL() {
+        return EMAIL;
     }
 
-    public void setEmail(String email) {
-        Email = email;
+    public void setEMAIL(String EMAIL) {
+        this.EMAIL = EMAIL;
     }
 
-    public String getOras() {
-        return Oras;
+    public String getORAS() {
+        return ORAS;
     }
 
-    public void setOras(String oras) {
-        Oras = oras;
+    public void setORAS(String ORAS) {
+        this.ORAS = ORAS;
     }
 
-    public String getAdresa() {
-        return Adresa;
+    public String getADRESA() {
+        return ADRESA;
     }
 
-    public void setAdresa(String adresa) {
-        Adresa = adresa;
+    public void setADRESA(String ADRESA) {
+        this.ADRESA = ADRESA;
     }
 
-    public String getCod_Postal() {
-        return Cod_Postal;
+    public String getCODPOSTAL() {
+        return CODPOSTAL;
     }
 
-    public void setCod_Postal(String cod_Postal) {
-        Cod_Postal = cod_Postal;
+    public void setCODPOSTAL(String CODPOSTAL) {
+        this.CODPOSTAL = CODPOSTAL;
     }
 
-    public Set<Comanda> getComenzi() {
-        return new HashSet<>(comenzi);
+    public Set<Comanda> getCOMENZI() {
+        return new HashSet<>(COMENZI);
     }
 
-    public void setComenzi(Set<Comanda> comenzi) {
-        this.comenzi = new HashSet<>(comenzi);
+    public void setCOMENZI(Set<Comanda> comenzi) {
+        this.COMENZI = new HashSet<>(comenzi);
     }
 }

@@ -16,6 +16,8 @@ public interface ComandaDAO {
 
     void updateComanda(Long idcomanda, String status_comanda, LocalDate data_plasarii, LocalTime ora_plasarii, LocalDate data_livrarii, LocalTime ora_livrarii, Client client, Magazin magazin);
 
+    Comanda getComanda(Long idcomanda);
+
     List<Comanda> displayComenzi();
 
 }

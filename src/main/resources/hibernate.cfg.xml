@@ -11,6 +11,7 @@
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.username">PIBD</property>
         <property name="hibernate.connection.password">PIBD_PROJECT_2021</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
         <mapping resource="Client.hbm.xml"/>
         <mapping resource="Comanda.hbm.xml"/>
         <mapping resource="Magazin.hbm.xml"/>

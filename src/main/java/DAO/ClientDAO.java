@@ -14,6 +14,8 @@ public interface ClientDAO {
 
     void updateClient(Long idclient, String cnp, String nume, String prenume, String telefon, String email, String oras, String adresa, String cod_Postal);
 
+    Client getClient(Long idclient);
+
     List<Client> displayClienti();
 
 }

@@ -6,79 +6,79 @@ import java.time.LocalTime;
 
 public class Comanda implements Serializable {
 
-    private Long idcomanda;
-    private String status_comanda;
-    private LocalDate data_plasarii;
-    private LocalTime ora_plasarii;
-    private LocalDate data_livrarii;
-    private LocalTime ora_livrarii;
-    private Client client;
-    private Magazin magazin;
+    private Long IDCOMANDA;
+    private String STATUS_COMANDA;
+    private LocalDate DATA_PLASARII;
+    private LocalTime ORA_PLASARII;
+    private LocalDate DATA_LIVRARII;
+    private LocalTime ORA_LIVRARII;
+    private Client CLIENT;
+    private Magazin MAGAZIN;
 
     public Comanda() { }
 
-    public Long getIdcomanda() {
-        return idcomanda;
+    public Long getIDCOMANDA() {
+        return IDCOMANDA;
     }
 
-    public void setIdcomanda(Long idcomanda) {
-        this.idcomanda = idcomanda;
+    public void setIDCOMANDA(Long idcomanda) {
+        this.IDCOMANDA = idcomanda;
     }
 
-    public String getStatus_comanda() {
-        return status_comanda;
+    public String getSTATUS_COMANDA() {
+        return STATUS_COMANDA;
     }
 
-    public void setStatus_comanda(String status_comanda) {
-        this.status_comanda = status_comanda;
+    public void setSTATUS_COMANDA(String status_comanda) {
+        this.STATUS_COMANDA = status_comanda;
     }
 
-    public LocalDate getData_plasarii() {
-        return data_plasarii;
+    public LocalDate getDATA_PLASARII() {
+        return DATA_PLASARII;
     }
 
-    public void setData_plasarii(LocalDate data_plasarii) {
-        this.data_plasarii = data_plasarii;
+    public void setDATA_PLASARII(LocalDate data_plasarii) {
+        this.DATA_PLASARII = data_plasarii;
     }
 
-    public LocalTime getOra_plasarii() {
-        return ora_plasarii;
+    public LocalTime getORA_PLASARII() {
+        return ORA_PLASARII;
     }
 
-    public void setOra_plasarii(LocalTime ora_plasarii) {
-        this.ora_plasarii = ora_plasarii;
+    public void setORA_PLASARII(LocalTime ora_plasarii) {
+        this.ORA_PLASARII = ora_plasarii;
     }
 
-    public LocalDate getData_livrarii() {
-        return data_livrarii;
+    public LocalDate getDATA_LIVRARII() {
+        return DATA_LIVRARII;
     }
 
-    public void setData_livrarii(LocalDate data_livrarii) {
-        this.data_livrarii = data_livrarii;
+    public void setDATA_LIVRARII(LocalDate data_livrarii) {
+        this.DATA_LIVRARII = data_livrarii;
     }
 
-    public LocalTime getOra_livrarii() {
-        return ora_livrarii;
+    public LocalTime getORA_LIVRARII() {
+        return ORA_LIVRARII;
     }
 
-    public void setOra_livrarii(LocalTime ora_livrarii) {
-        this.ora_livrarii = ora_livrarii;
+    public void setORA_LIVRARII(LocalTime ora_livrarii) {
+        this.ORA_LIVRARII = ora_livrarii;
     }
 
-    public Client getClient() {
-        return new Client(client);
+    public Client getCLIENT() {
+        return new Client(CLIENT);
     }
 
-    public void setClient(Client client) {
-        this.client = new Client(client);
+    public void setCLIENT(Client client) {
+        this.CLIENT = new Client(client);
     }
 
-    public Magazin getMagazin() {
-        return new Magazin(magazin);
+    public Magazin getMAGAZIN() {
+        return new Magazin(MAGAZIN);
     }
 
-    public void setMagazin(Magazin magazin) {
-        this.magazin = new Magazin(magazin);
+    public void setMAGAZIN(Magazin magazin) {
+        this.MAGAZIN = new Magazin(magazin);
     }
 }
 

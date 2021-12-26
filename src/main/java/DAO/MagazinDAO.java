@@ -1,5 +1,6 @@
 package DAO;
 
+import JavaBean.Client;
 import JavaBean.Magazin;
 
 import java.util.List;
@@ -11,6 +12,8 @@ public interface MagazinDAO {
     void deleteMagazin(Magazin magazin);
 
     void updateMagazin(Long idmagazin, String nume_magazin, String telefon, String email, String oras, String adresa, String cod_Postal);
+
+    Magazin getMagazin(Long idmagazin);
 
     List<Magazin> displayMagazine();
 

@@ -2,6 +2,7 @@ package Controller;
 
 import DAOImplement.ClientDAOImplement;
 import JavaBean.Client;
+import com.oracle.wls.shaded.org.apache.xpath.operations.Or;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -10,7 +11,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
-import java.net.http.HttpClient;
 import java.util.List;
 
 public class ClientController extends HttpServlet {
@@ -31,40 +31,49 @@ public class ClientController extends HttpServlet {
     @Override
     protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(request.getParameter("addClient") != null){
-            client.setCnp(request.getParameter("cnp"));
-            client.setNume(request.getParameter("Nume"));
-            client.setPrenume(request.getParameter("Prenume"));
-            client.setTelefon(request.getParameter("Telefon"));
-            client.setEmail(request.getParameter("Email"));
-            client.setOras(request.getParameter("Oras"));
-            client.setAdresa(request.getParameter("Adresa"));
-            client.setCod_Postal(request.getParameter("Cod Postal"));
+            client.setCNP(request.getParameter("cnp_add"));
+            client.setNUME(request.getParameter("nume_add"));
+            client.setPRENUME(request.getParameter("prenume_add"));
+            client.setTELEFON(request.getParameter("telefon_add"));
+            client.setEMAIL(request.getParameter("email_add"));
+            client.setORAS(request.getParameter("oras_add"));
+            client.setADRESA(request.getParameter("adresa_add"));
+            client.setCODPOSTAL(request.getParameter("cod_postal_add"));
 
             clientDAO.addClient(client);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("addClient.jsp");
-            dispatcher.forward(request, response);
+            response.sendRedirect("/");
         }
-        if(request.getParameter("deleteClient") != null){
-            Long idclient = Long.parseLong(request.getParameter("idclient"));
-            client.setIdclient(idclient);
-            clientDAO.deleteClient(client);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("deleteClient.jsp");
-            dispatcher.forward(request, response);
-        }
-        if(request.getParameter("updateClient") != null){
-            Long idclient = Long.parseLong(request.getParameter("idclient"));
-            String cnp = request.getParameter("cnp");
-            String Nume = request.getParameter("Nume");
-            String Prenume = request.getParameter("Prenume");
-            String Telefon = request.getParameter("Telefon");
-            String Email = request.getParameter("Email");
-            String Oras = request.getParameter("Oras");
-            String Adresa = request.getParameter("Adresa");
-            String Cod_Postal = request.getParameter("Cod Postal");
+        else if(request.getParameter("updateClient") != null){
+            Long idclient = Long.parseLong(request.getParameter("Select_client_Update"));
+
+            client = clientDAO.getClient(idclient);
+
+            String cnp = request.getParameter("CNP_update");
+            String Nume = request.getParameter("Nume_update");
+            String Prenume = request.getParameter("Prenume_update");
+            String Telefon = request.getParameter("Telefon_update");
+            String Email = request.getParameter("Email_update");
+            String Oras = request.getParameter("oras_update");
+            String Adresa = request.getParameter("adresa_update");
+            String Cod_Postal = request.getParameter("cod_postal_update");
+
+            cnp = (cnp.length() == 0) ? client.getCNP() : cnp;
+            Nume = (Nume.length() == 0) ? client.getNUME() : Nume;
+            Prenume = (Prenume.length() == 0) ? client.getPRENUME() : Prenume;
+            Telefon = (Telefon.length() == 0) ? client.getTELEFON() : Telefon;
+            Email = (Email.length() == 0) ? client.getEMAIL() : Email;
+            Oras = (Oras.length() == 0) ? client.getORAS() : Oras;
+            Adresa = (Adresa.length() == 0) ? client.getADRESA() : Adresa;
+            Cod_Postal = (Cod_Postal.length() == 0) ? client.getCODPOSTAL() : Cod_Postal;
 
             clientDAO.updateClient(idclient, cnp, Nume, Prenume, Telefon, Email, Oras, Adresa, Cod_Postal);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("updateClient.jsp");
-            dispatcher.forward(request, response);
+            response.sendRedirect("Clienti?displayClienti=Tabelul+cu+clienti");
+        }
+        else if(request.getParameter("deleteClient") != null){
+            Long idclient = Long.parseLong(request.getParameter("Select_client_Delete"));
+            client.setIDCLIENT(idclient);
+            clientDAO.deleteClient(client);
+            response.sendRedirect("Clienti?displayClienti=Tabelul+cu+clienti");
         }
     }
 }

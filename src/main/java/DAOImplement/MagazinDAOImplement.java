@@ -1,6 +1,7 @@
 package DAOImplement;
 
 import DAO.MagazinDAO;
+import JavaBean.Client;
 import JavaBean.Magazin;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -31,12 +32,12 @@ public class MagazinDAOImplement implements MagazinDAO{
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         Magazin magazin = session.load(Magazin.class, idmagazin);
-        magazin.setNume_magazin(nume_magazin);
-        magazin.setTelefon(telefon);
-        magazin.setEmail(email);
-        magazin.setOras(oras);
-        magazin.setAdresa(adresa);
-        magazin.setCod_Postal(cod_Postal);
+        magazin.setNUME_MAGAZIN(nume_magazin);
+        magazin.setTELEFON(telefon);
+        magazin.setEMAIL(email);
+        magazin.setORAS(oras);
+        magazin.setADRESA(adresa);
+        magazin.setCODPOSTAL(cod_Postal);
         session.update(magazin);
         transaction.commit();
         session.close();
@@ -48,5 +49,13 @@ public class MagazinDAOImplement implements MagazinDAO{
         List<Magazin> magazinList = session.createQuery("from Magazin").list();
         session.close();
         return magazinList;
+    }
+
+    @Override
+    public Magazin getMagazin(Long idmagazin) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Magazin magazin = session.load(Magazin.class, idmagazin);
+        session.close();
+        return magazin;
     }
 }

@@ -102,8 +102,8 @@
                             <div class="form-floating">
                                 <select type="text" class="form-control" name="Select_client_Update" aria-label="Select client"
                                         id="Select_client_Update">
-                                    <c:forEach items="${judecatorList}" var="client">
-                                        <option value="${client.idclient}">${client.prenume} ${client.nume} (${client.cnp})</option>
+                                    <c:forEach items="${clientList}" var="client">
+                                        <option value="${client.IDCLIENT}">${client.PRENUME} ${client.NUME} (${client.CNP})</option>
                                     </c:forEach>
                                 </select>
                                 <label for="Select_client_Update">Client</label>
@@ -154,7 +154,7 @@
                         <div class="col-12">
                             <div class="form-floating">
                                 <textarea type="text" class="form-control" name="oras_update" placeholder="Oras" aria-label="Oras" id="oras_update"
-                                          maxlength="100" required></textarea>
+                                          maxlength="100"></textarea>
                                 <label for="oras_update">Oras</label>
                             </div>
                         </div>
@@ -162,7 +162,7 @@
                         <div class="col-12">
                             <div class="form-floating">
                                 <textarea type="text" class="form-control" name="adresa_update" placeholder="Adresa" aria-label="Adresa" id="adresa_update"
-                                          maxlength="100" required></textarea>
+                                          maxlength="100"></textarea>
                                 <label for="adresa_update">Adresa</label>
                             </div>
                         </div>
@@ -170,7 +170,7 @@
                         <div class="col-12">
                             <div class="form-floating">
                                 <textarea type="text" class="form-control" name="cod_postal_update" placeholder="Adresa" aria-label="Adresa" id="cod_postal_update"
-                                          maxlength="100" required></textarea>
+                                          maxlength="100"></textarea>
                                 <label for="cod_postal_update">Cod Postal</label>
                             </div>
                         </div>
@@ -178,7 +178,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Închide</button>
-                    <button type="submit" class="btn btn-primary" name="updateJudecator">Modifică</button>
+                    <button type="submit" class="btn btn-primary" name="updateClient">Modifică</button>
                 </div>
             </form>
         </div>
@@ -202,9 +202,9 @@
                             <div class="form-floating">
                                 <select type="text" class="form-control" name="Select_client_Delete" aria-label="Select client"
                                         id="Select_client_Delete">
-                                    <%--@elvariable id="judecatorList" type="java.util.List"--%>
-                                        <c:forEach items="${judecatorList}" var="client">
-                                            <option value="${client.idclient}">${client.Prenume} ${client.Nume} (${client.cnp})</option>
+                                    <%--@elvariable id="clientList" type="java.util.List"--%>
+                                        <c:forEach items="${clientList}" var="client">
+                                            <option value="${client.IDCLIENT}">${client.PRENUME} ${client.NUME} (${client.CNP})</option>
                                         </c:forEach>
                                 </select>
                                 <label for="Select_client_Delete">Client</label>
@@ -240,13 +240,13 @@
         <%--@elvariable id="clientList" type="java.util.List"--%>
         <c:forEach var="client" items="${clientList}">
             <tr class="align-middle">
-                <td>${client.Prenume} ${client.Nume}</td>
-                <td class="text-center">${client.cnp}</td>
-                <td class="text-center">${client.Telefon}</td>
-                <td>${client.Email}</td>
-                <td>${client.Oras}</td>
-                <td class="text-center">${client.Adresa}</td>
-                <td class="text-center">${client.Cod_Postal}</td>
+                <td>${client.PRENUME} ${client.NUME}</td>
+                <td class="text-center">${client.CNP}</td>
+                <td class="text-center">${client.TELEFON}</td>
+                <td>${client.EMAIL}</td>
+                <td>${client.ORAS}</td>
+                <td class="text-center">${client.ADRESA}</td>
+                <td class="text-center">${client.CODPOSTAL}</td>
             </tr>
         </c:forEach>
         </tbody>

@@ -32,14 +32,14 @@ public class ClientDAOImplement implements ClientDAO{
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         Client client = session.load(Client.class, idclient);
-        client.setCnp(cnp);
-        client.setNume(nume);
-        client.setPrenume(prenume);
-        client.setTelefon(telefon);
-        client.setEmail(email);
-        client.setOras(oras);
-        client.setAdresa(adresa);
-        client.setCod_Postal(cod_Postal);
+        client.setCNP(cnp);
+        client.setNUME(nume);
+        client.setPRENUME(prenume);
+        client.setTELEFON(telefon);
+        client.setEMAIL(email);
+        client.setORAS(oras);
+        client.setADRESA(adresa);
+        client.setCODPOSTAL(cod_Postal);
         session.update(client);
         transaction.commit();
         session.close();
@@ -53,5 +53,11 @@ public class ClientDAOImplement implements ClientDAO{
         return clientList;
     }
 
-
+    @Override
+    public Client getClient(Long idclient) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Client client = session.load(Client.class, idclient);
+        session.close();
+        return client;
+    }
 }
