@@ -4,21 +4,15 @@
 <html lang="ro">
 
 <head>
-
-    <title>Tabel Programări</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <title> Afișare Comenzi </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="static/clienti/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Armata&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam&amp;display=swap">
+    <link rel="stylesheet" href="static/clienti/assets/css/styles.css">
 
 
     <script>
@@ -55,32 +49,37 @@
 
 <body>
 
-<div class="m-4 title">
-    Comenzi
-</div>
-
-<div class="container">
-    <div class="row">
-
-        <div class="col-sm text-center">
-            <button type="submit" class="btn btn-primary btn-lg m-2 fix-button" data-bs-toggle="modal" data-bs-target="#comenzi_update_modal">
-                Modifică o comanda
-            </button>
+<section style="font-family: Armata, sans-serif;color: var(--bs-black-rgb);">
+    <div class="container-fluid"
+         style="background: #ffffff;margin-left: Auto;margin-right: Auto;padding-top: 30px;height: 200px;filter: grayscale(0%);">
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary" type="button" onclick="location.href='/';" value="Pagina Principală"
+                        style="transform: translate(149px);filter: contrast(100%) invert(0%);">Pagina Principală
+                </button>
+            </div>
+            <div class="col">
+                <h2 class="d-xxl-flex"
+                    style="/*text-align: center;*/padding-top: 10px;padding-right: 34px;padding-left: 34px;font-family: Kalam, serif;transform: translate(-144px);">
+                    <br><strong>Tabel Comenzi</strong><br><br><br></h2>
+            </div>
         </div>
-
-        <div class="col-sm text-center menu">
-            <button class="btn btn-primary btn-lg m-2 fix-button" onclick="location.href='/';" value="Home">
-                Home
-            </button>
-        </div>
-
-        <div class="col-sm text-center">
-            <button type="submit" class="btn btn-primary btn-lg m-2 fix-button" data-bs-toggle="modal" data-bs-target="#comenzi_delete_modal">
-                Șterge o comandă
-            </button>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal"
+                        data-bs-target="#comenzi_update_modal" style="transform: translate(464px);height: 38px;">
+                    Modifică Comandă
+                </button>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal"
+                        data-bs-target="#comenzi_delete_modal" style="transform: translate(261px);">
+                    Șterge Comanda
+                </button>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- Comenzi Update Modal -->
 <div class="modal fade" id="comenzi_update_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -123,17 +122,6 @@
                                 <label for="STATUS_COMANDA_UPDATE">Status Comandă</label>
                             </div>
                         </div>
-
-
-
-<%--                        <div class="col-12">--%>
-<%--                            <div class="form-floating">--%>
-<%--                                <input type="text" class="form-control" name="STATUS_COMANDA_UPDATE" placeholder="STATUS_COMANDA"--%>
-<%--                                       aria-label="STATUS_COMANDA" id="STATUS_COMANDA_UPDATE"--%>
-<%--                                       maxlength="20">--%>
-<%--                                <label for="STATUS_COMANDA_UPDATE">Status Comandă</label>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
 
                         <div class="col-12">
                             <div class="form-floating">
@@ -203,7 +191,7 @@
                                         </option>
                                     </c:forEach>
                                 </select>
-                                <label for="Select_comanda_Delete">Programare</label>
+                                <label for="Select_comanda_Delete">Comandă</label>
                             </div>
                         </div>
                     </div>
@@ -248,6 +236,8 @@
         </tbody>
     </table>
 </div>
+
+<script src="static/clienti/assets/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 

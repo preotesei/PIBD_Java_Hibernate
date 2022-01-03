@@ -1,6 +1,5 @@
 package DAO;
 
-import JavaBean.Client;
 import JavaBean.Magazin;
 
 import java.util.List;

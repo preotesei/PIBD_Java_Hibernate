@@ -2,7 +2,6 @@ package Controller;
 
 import DAOImplement.MagazinDAOImplement;
 import JavaBean.Magazin;
-import com.oracle.wls.shaded.org.apache.xpath.operations.Or;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -28,7 +27,7 @@ public class MagazinController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response) throws IOException {
         if(request.getParameter("addMagazin") != null){
             magazin.setNUME_MAGAZIN(request.getParameter("NUME_MAGAZIN_add"));
             magazin.setTELEFON(request.getParameter("TELEFON_MAGAZIN_add"));

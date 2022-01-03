@@ -1,10 +1,8 @@
 package DAO;
 
 import JavaBean.Client;
-import JavaBean.Comanda;
 
 import java.util.List;
-import java.util.Set;
 
 public interface ClientDAO {
 

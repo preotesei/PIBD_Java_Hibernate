@@ -1,7 +1,6 @@
 package DAOImplement;
 
 import DAO.MagazinDAO;
-import JavaBean.Client;
 import JavaBean.Magazin;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

@@ -2,7 +2,6 @@ package Controller;
 
 import DAOImplement.ClientDAOImplement;
 import JavaBean.Client;
-import com.oracle.wls.shaded.org.apache.xpath.operations.Or;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -29,7 +28,7 @@ public class ClientController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response) throws IOException {
         if(request.getParameter("addClient") != null){
             client.setCNP(request.getParameter("cnp_add"));
             client.setNUME(request.getParameter("nume_add"));

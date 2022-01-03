@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="JavaBean.Client" table="clienti" optimistic-lock="version">
+    <class name="JavaBean.Client" table="clienti">
         <id name="IDCLIENT" type="java.lang.Long">
             <column name="IDCLIENT" sql-type="BIGINT" not-null="true"/>
             <generator class="identity"/>

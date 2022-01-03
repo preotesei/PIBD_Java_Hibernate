@@ -5,7 +5,6 @@ import DAOImplement.HibernateUtil;
 import JavaBean.Client;
 import JavaBean.Comanda;
 import JavaBean.Magazin;
-import com.sun.xml.bind.v2.model.core.ID;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -14,7 +13,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
 import org.jetbrains.annotations.NotNull;
 
-import javax.validation.constraints.Null;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -36,7 +34,7 @@ public class ComandaController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response) throws IOException {
         if(request.getParameter("addComanda") != null){
             Long IDCLIENT = Long.parseLong(request.getParameter("IDCLIENT_add"));
             Long IDMAGAZIN = Long.parseLong(request.getParameter("IDMAGAZIN_add"));
