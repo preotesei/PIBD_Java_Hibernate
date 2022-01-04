@@ -54,7 +54,7 @@
          style="background: #ffffff;margin-left: Auto;margin-right: Auto;padding-top: 30px;height: 200px;filter: grayscale(0%);">
         <div class="row">
             <div class="col">
-                <button class="btn btn-primary" type="button" onclick="location.href='/';" value="Pagina Principală"
+                <button class="btn btn-primary btn-lg m-2 fix-button" type="button" onclick="location.href='/';" value="Pagina Principală"
                         style="transform: translate(149px);filter: contrast(100%) invert(0%);">Pagina Principală
                 </button>
             </div>
